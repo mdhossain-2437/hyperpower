@@ -31,8 +31,6 @@ let wowMode = false;
 let enabled = true;
 let statusBarItem: vscode.StatusBarItem;
 let lastSpawnTime = 0;
-let comboCount = 0;
-let comboTimeout: ReturnType<typeof setTimeout> | undefined;
 
 export function activate(context: vscode.ExtensionContext) {
     // Register commands
@@ -68,11 +66,6 @@ export function activate(context: vscode.ExtensionContext) {
         const now = Date.now();
         if (now - lastSpawnTime < SPAWN_THROTTLE_MS) { return; }
         lastSpawnTime = now;
-
-        // Update combo counter
-        comboCount++;
-        if (comboTimeout) { clearTimeout(comboTimeout); }
-        comboTimeout = setTimeout(() => { comboCount = 0; }, 1000);
 
         // Spawn particles at cursor position
         const cursorPos = editor.selection.active;
