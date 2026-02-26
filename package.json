@@ -1,21 +1,64 @@
 {
   "name": "hyperpower",
-  "version": "1.1.1",
+  "displayName": "Hyperpower",
+  "version": "2.0.0",
   "license": "MIT",
+  "publisher": "hyperpower",
   "keywords": [
     "hyper",
     "hyper.app",
-    "hyper-plugin"
+    "hyper-plugin",
+    "vscode",
+    "power-mode",
+    "particles",
+    "effects"
   ],
-  "description": "Extension for particle effects in Hyper",
+  "description": "Particle effects extension for VS Code and Hyper terminal — type with power!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zeit/hyperpower.git"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "hyperpower.toggleWow",
+        "title": "Hyperpower: Toggle WOW Mode"
+      },
+      {
+        "command": "hyperpower.enable",
+        "title": "Hyperpower: Enable"
+      },
+      {
+        "command": "hyperpower.disable",
+        "title": "Hyperpower: Disable"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "tsc --noEmit -p ./"
   },
   "dependencies": {
     "color": "0.11.3",
     "convert-css-color-name-to-hex": "0.1.1",
     "lodash.throttle": "4.1.1",
     "lodash.values": "4.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.1",
+    "@types/vscode": "^1.75.0",
+    "typescript": "^5.0.0"
   }
 }

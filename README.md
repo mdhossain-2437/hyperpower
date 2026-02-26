@@ -1,16 +1,51 @@
 
 # Hyperpower
 
-Extension for Hyper that turns on power mode, with bonus `wow` mode.
+Particle effects extension for **VS Code** and **Hyper terminal** — type with power!
 
 ![hyper](https://cloud.githubusercontent.com/assets/13041/16820268/13c9bfe6-4905-11e6-8fe4-baf8fc8d9293.gif)
 
-**Note:** shaking is only enabled in wow mode now! Which makes `hyperpower` an extension that you can use full time :P
+## Features
 
-## How to use
+- ⚡ **Particle effects** — Colorful particles spawn at your cursor as you type
+- 🔥 **WOW Mode** — Toggle enhanced particles with more colors and symbols
+- 🎯 **Status bar control** — Click the status bar to toggle WOW mode
+- 🎨 **Multiple particle styles** — Circles, diamonds, squares, stars and more
+
+## VS Code Extension
+
+### Install from Source
+
+```bash
+npm install
+npm run compile
+```
+
+Then press `F5` in VS Code to launch the Extension Development Host with Hyperpower active.
+
+### Package as VSIX
+
+```bash
+npm install -g @vscode/vsce
+vsce package
+```
+
+Then install the generated `.vsix` file in VS Code via **Extensions > Install from VSIX**.
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| `Hyperpower: Toggle WOW Mode` | Toggle enhanced particle effects |
+| `Hyperpower: Enable` | Enable particle effects |
+| `Hyperpower: Disable` | Disable particle effects |
+
+## Hyper Terminal Plugin
 
 Install [Hyper](https://hyper.is) and add `hyperpower`
 to `plugins` in `~/.hyper.js`.
+
+The Hyper plugin entry point is `index.js`. Type `wow` at the terminal prompt to toggle WOW mode with screen shaking.
 
 ## Credits
 
